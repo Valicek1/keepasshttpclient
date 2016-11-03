@@ -1,0 +1,28 @@
+{
+  "name": "valicek1/keepasshttpclient",
+  "description": "PHP library for KeePassHTTP",
+  "license": [
+    "BSD-3-Clause",
+    "GPL-2.0",
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Václav Valíček",
+      "homepage": "http://valicek.name",
+      "email": "vaclav@valicek.name"
+    }
+  ],
+  "support": {
+    "email": "vaclav@valicek.name",
+    "issues": "https://github.com/valicek1/keepasshttpclient/issues"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  }
+}
