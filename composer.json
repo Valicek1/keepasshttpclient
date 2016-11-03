@@ -15,7 +15,7 @@
   ],
   "support": {
     "email": "vaclav@valicek.name",
-    "issues": "https://github.com/valicek1/keepasshttpclient/issues"
+    "issues": "https://github.com/Valicek1/keepasshttpclient/issues"
   },
   "autoload": {
     "classmap": [
