@@ -63,4 +63,4 @@ Server requires `testAssociated` at the beginning of every new session, or after
 
 ## Documentation
 
-**TODO!** But, you can still look into [source](src/KeepassHTTPClient.php)..
+**TODO!** But, you can still look into [source](src/KeePassHTTPClient.php)..
