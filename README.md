@@ -67,13 +67,13 @@ Server requires `testAssociated` at the beginning of every new session, or after
 
 ```php
 /**
-	 * KeePassHTTPClient constructor.
-	 * @param string $key Encryption key, 256 bits
-	 * @param string $label Label (product of association)
-	 * @param string $address KeepassHTTP listening address
-	 * @param int    $port KeepassHTTP listening port
-	 */
-	public function __construct($key, $label = "", $address = "localhost", $port = 19455){}
+ * KeePassHTTPClient constructor.
+ * @param string $key Encryption key, 256 bits
+ * @param string $label Label (product of association)
+ * @param string $address KeepassHTTP listening address
+ * @param int    $port KeepassHTTP listening port
+ */
+public function __construct($key, $label = "", $address = "localhost", $port = 19455){}
 ```
 
 ### Getters
