@@ -63,4 +63,37 @@ Server requires `testAssociated` at the beginning of every new session, or after
 
 ## Documentation
 
-**TODO!** But, you can still look into [source](src/KeePassHTTPClient.php)..
+### Constructor
+
+```php
+/**
+	 * KeePassHTTPClient constructor.
+	 * @param string $key Encryption key, 256 bits
+	 * @param string $label Label (product of association)
+	 * @param string $address KeepassHTTP listening address
+	 * @param int    $port KeepassHTTP listening port
+	 */
+	public function __construct($key, $label = "", $address = "localhost", $port = 19455){}
+```
+
+### Getters
+
+```php
+public function getAddress(){} // address of server
+public function getPort(){} // port of server
+public function isAssociated(){} // state of last testAssociated
+public function getClient(){} // return guzzle client
+```
+
+### Functions to work with KeePass
+```php
+public function isServerListening(){} // check, if port is opened
+public function sendRequest($json){} // json encode $json and send it as request. Return json object of response
+public function testAssociated($empty = FALSE){} // test if key is associated or server responding (empty = TRUE)
+public function authorizeKey(){} // authorize key (from constructor)
+public function getLogins($url, $redirectUrl){} // find logins/passwords for entered criteria.
+public function getLoginsCount($url, $redirectUrl){} // count number of items for entered criteria
+public function setLogin($url, $redirectURL, $login, $password){} // save login to KeePass DB
+```
+
+It's not much pretty, but enough for using. You can still look into [source](src/KeePassHTTPClient.php)..
