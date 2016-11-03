@@ -26,7 +26,9 @@ class KeePassHTTPClient
 		Key = "Key",
 		Url = "Url",
 		SubmitUrl = "SubmitUrl",
-		SortSelection = "SortSelection";
+		SortSelection = "SortSelection",
+		Login = "Login",
+		Password = "Password";
 
 	/** @var  string */
 	private $key;
@@ -370,6 +372,31 @@ class KeePassHTTPClient
 		$resp = $this->sendRequest($req);
 
 		return $resp->Count;
+	}
+
+
+	/**
+	 * Saves Password into KeePass DB
+	 * @param $url
+	 * @param $redirectURL
+	 * @param $login
+	 * @param $password
+	 * @return bool
+	 */
+	public function setLogin($url, $redirectURL, $login, $password)
+	{
+
+		$req = $this->getVerifier();
+		$req += [
+			self::Id          => $this->label,
+			self::RequestType => "set-login",
+			self::Url         => $this->encode($url),
+			self::SubmitUrl   => $this->encode($redirectURL),
+			self::Login       => $this->encode($login),
+			self::Password    => $this->encode($password),
+		];
+		$resp = $this->sendRequest($req);
+		return $resp->Success;
 	}
 
 }
