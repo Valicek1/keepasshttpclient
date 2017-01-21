@@ -74,7 +74,7 @@ class KeePassHTTPClient
 
 		$this->client = new Client([
 			'base_uri' => "http://{$this->address}:{$this->port}/",
-			'debug'    => TRUE,
+			'debug'    => FALSE,
 			'timeout'  => 60,
 		]);
 
